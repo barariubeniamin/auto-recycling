@@ -18,8 +18,18 @@ body {
 .sidebar header {
   font-size: 20px;
   text-align: center;
-  color: azure;
+  color: rgb(199, 231, 231);
   line-height: 80px;
-  background: rgb(61, 61, 70);
+  background: rgb(68, 68, 72);
   user-select: none;
+}
+.sidebar ul {
+  display: block;
+  color: rgb(171, 211, 211);
+  height: 100%;
+  width: 100%;
+  padding-left: 45px;
+  line-height: 60px;
+  font-size: 15px;
+  box-sizing: border-box;
 }
