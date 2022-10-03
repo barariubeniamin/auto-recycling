@@ -2,6 +2,6 @@
 
 ## TEAM
 
-[Catalin Dochita](https://github.com/cdochita)
+- [Catalin Dochita](https://github.com/cdochita)
 
-[Barariu Beniamin](https://github.com/barariubeniamin)
+- [Barariu Beniamin](https://github.com/barariubeniamin)
