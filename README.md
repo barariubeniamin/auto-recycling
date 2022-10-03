@@ -4,7 +4,11 @@
 
 - [Catalin Dochita](https://github.com/cdochita)
 
-- [Barariu Beniamin](https://github.com/barariubeniamin)
+- [Beniamin Barariu](https://github.com/barariubeniamin)
+
+- [Anca Pidmaliski](https://github.com/apidmaliski)
+
+- [Sorin Sarbu](http://github.com/sorinsarbu)
 
 ## TODO
 - [ ] Create a table in html
