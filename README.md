@@ -2,4 +2,4 @@
 
 ## TEAM
 
-[Catalin Dochita] (https://github.com/cdochita)
+[Catalin Dochita](https://github.com/cdochita)
