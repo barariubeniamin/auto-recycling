@@ -16,7 +16,9 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+  box-sizing: border-box;
   text-decoration: none;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 #content {
   flex: 4;
@@ -30,6 +32,15 @@ body {
   margin: 5px;
   flex: 4;
   height: 100%;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 5%;
+  background-position: center;
+  background-size: cover;
+  display: flex;
 }
 
 .sidebar {
