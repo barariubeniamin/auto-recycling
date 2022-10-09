@@ -41,6 +41,18 @@ body {
   background-position: center;
   background-size: cover;
   display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 700px;
+  background: #040404;
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 10px 20px;
 }
 
 .sidebar {
