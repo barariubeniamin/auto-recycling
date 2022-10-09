@@ -9,36 +9,50 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
   <body>
-    <input type="checkbox" id="check" />
-    <div class="sidebar">
-      <header>Auto-Recycling</header>
-      <ul>
-        <li>
-          <a href="#"><i class="fas fa-"></i> Tesla</a>
-        </li>
-        <li>
-          <a href="#"><i class="fas fa-"></i> BWM</a>
-        </li>
-        <li>
-          <a href="#"><i class="fas fa-"></i> Mercedes</a>
-        </li>
-        <li>
-          <a href="#"><i class="fas fa-"></i> Audi</a>
-        </li>
-        <li>
-          <a href="#"><i class="fas fa-"></i> About</a>
-        </li>
-        <li>
-          <a href="#"><i class="fas fa-"></i> Contact</a>
-        </li>
-      </ul>
-    </div>
-    <div class="container">
-      <form action="">
-        <input type="text" placeholder="search" name="q" />
-        <button type="submit"><img src="images/search.png" /></button>
-      </form>
-    </div>
-    <script src="index.js"></script>
+    <header id="header">
+      <div>
+        <p>Aici sa avem un header cu un text, titlu, poza....</p>
+      </div>
+    </header>
+    <section id="content">
+      <input type="checkbox" id="check" />
+      <div id="side" class="sidebar">
+        <header>Auto-Recycling</header>
+        <ul>
+          <li>
+            <a href="#" data-page="Tesla"><i class="fas fa-"></i> Tesla</a>
+          </li>
+          <li>
+            <a href="#" data-page="bmw"><i class="fas fa-"></i> BWM</a>
+          </li>
+          <li>
+            <a href="#" data-page="merceds"><i class="fas fa-"></i> Mercedes</a>
+          </li>
+          <li>
+            <a href="#" data-page="audi"><i class="fas fa-"></i> Audi</a>
+          </li>
+          <li>
+            <a href="#" data-page="about"><i class="fas fa-"></i> About</a>
+          </li>
+          <li>
+            <a href="#" data-page="contact"><i class="fas fa-"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div id="info">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam
+        architecto asperiores inventore eum provident facilis, exercitationem
+        nemo magni eveniet nobis libero ipsum quasi velit veniam temporibus
+        expedita? Sint, eos adipisci.
+        <div class="container">
+          <form action="">
+            <input type="text" placeholder="search" name="q" />
+            <button type="submit"><img src="images/search.png" /></button>
+          </form>
+        </div>
+      </div>
+
+      <script src="index.js"></script>
+    </section>
   </body>
 </html>
