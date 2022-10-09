@@ -1,0 +1,7 @@
+[
+  { "make": "Tesla", "model": "3", "part": "parbriz" },
+  { "make": "Audi", "model": "A3", "part": "parbriz" },
+  { "make": "BMW", "model": "M3", "part": "parbriz" },
+  { "make": "Mercedes", "model": "Class C", "part": "parbriz" },
+  { "make": "Mercedes", "model": "Class A", "part": "parbriz" }
+]

@@ -120,3 +120,8 @@ body {
   border-top: 1px solid rgb(92, 89, 89);
   border-bottom: 1px solid rgb(92, 89, 89);
 }
+#partList {
+  background-color: blue;
+  width: 100%;
+  height: 100%;
+}
