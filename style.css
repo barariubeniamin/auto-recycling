@@ -18,7 +18,7 @@ body {
   background-color: red;
 }
 #header p {
-  text-align: center;
+  text-align: left;
 }
 
 * {
@@ -42,16 +42,53 @@ body {
   flex: 4;
   height: 100%;
 }
-
 .container {
-  vertical-align: top;
-  text-align: right;
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 5%;
   background-position: center;
   background-size: cover;
-  /* display: flex; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+  background: #040404;
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 10px 20px;
+  backdrop-filter: blur(4px) saturate(180%);
+}
+
+.search-bar input {
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 24px 20px;
+  font-size: 20px;
+  color: white;
+}
+
+::placeholder {
+  color: #cac7ff;
+}
+
+.search-bar button img {
+  width: 25px;
+}
+
+.search-bar button {
+  border: 0;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background: #58629b;
+  cursor: pointer;
 }
 
 .sidebar {
