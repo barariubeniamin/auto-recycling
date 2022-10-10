@@ -21,6 +21,13 @@ body {
   text-align: left;
 }
 
+#banner {
+  width: 100%;
+  background-image: url(banner.jpg);
+  height: 405px;
+  background-position: center;
+}
+
 * {
   margin: 0;
   padding: 0;
