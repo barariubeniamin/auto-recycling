@@ -15,3 +15,7 @@
 
 - [ ] Create a table in html
 - [ ] Design and structures in CSS
+- [x] **Header**
+  - [x] Integrated search bar
+  - [x] Filter with side-bar
+  - [ ] Add items button
