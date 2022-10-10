@@ -6,33 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auto-Recycling</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
   <body>
-    <input type="checkbox" id="check" />
-    <div class="sidebar">
-      <header>Auto-Recycling</header>
-      <ul>
-        <li>
-          <a href="#"><i class="fas fa-bars"></i> Tesla</a>
-        </li>
-        <li>
-          <a href="#"><i class="fas fa-"></i> BWM</a>
-        </li>
-        <li>
-          <a href="#"><i class="fas fa-"></i> Mercedes</a>
-        </li>
-        <li>
-          <a href="#"><i class="fas fa-"></i> Audi</a>
-        </li>
-        <li>
-          <a href="#"><i class="fas fa-"></i> About</a>
-        </li>
-        <li>
-          <a href="#"><i class="fas fa-"></i> Contact</a>
-        </li>
-      </ul>
-    </div>
-    <script src="index.js"></script>
+    <header id="header">
+      <div>
+        <p>Aici sa avem un header cu un text, titlu, poza....</p>
+        <div class="container">
+          <form action="" class="search-bar">
+          <form action="" class="search-bar" id="search">
+            <input type="text" placeholder="search" name="q" />
+            <button type="submit"><img src="search.png" /></button>
+          </form>
+            <a href="#" data-page="Tesla"><i class="fas fa-"></i> Tesla</a>
+          </li>
+          <li>
+            <a href="#" data-page="bmw"><i class="fas fa-"></i> BMW</a>
+            <a href="#" data-page="BMW"><i class="fas fa-"></i> BMW</a>
+          </li>
+          <li>
+            <a href="#" data-page="merceds"><i class="fas fa-"></i> Mercedes</a>
+            <a href="#" data-page="Mercedes"
+              ><i class="fas fa-"></i> Mercedes</a
+            >
+          </li>
+          <li>
+            <a href="#" data-page="audi"><i class="fas fa-"></i> Audi</a>
+            <a href="#" data-page="Audi"><i class="fas fa-"></i> Audi</a>
+          </li>
+          <li>
+            <a href="#" data-page="about"><i class="fas fa-"></i> About</a>
+            <a href="#" data-page="About"><i class="fas fa-"></i> About</a>
+          </li>
+          <li>
+            <a href="#" data-page="contact"><i class="fas fa-"></i> Contact</a>
+            <a href="#" data-page="Contact"><i class="fas fa-"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div id="info">
+        <table id="partList" border="1">
+          <thead>
+            <tr>
+              <th>Make</th>
+              <th>Model</th>
+              <th>Part</th>
+              <th></th>
+            </tr>
+          </thead>
+        <form action="" method="" id="editForm">
+          <table id="partList" border="1">
+            <thead>
+              <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Part</th>
+                <th></th>
+              </tr>
+            </thead>
+
+          <tbody></tbody>
+        </table>
+            <tbody></tbody>
+          </table>
+        </form>
+      </div>
+
+      <script src="index.js"></script>
+    </section>
   </body>
 </html>
