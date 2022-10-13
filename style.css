@@ -15,7 +15,6 @@ body {
   width: 100%;
   height: 100%;
   flex: 1;
-  background-color: red;
 }
 #header p {
   text-align: left;
@@ -24,7 +23,7 @@ body {
 #banner {
   width: 100%;
   background-image: url(banner.jpg);
-  height: 405px;
+  height: 200px;
   background-position: center;
 }
 
@@ -128,7 +127,7 @@ body {
   border-bottom: 1px solid rgb(92, 89, 89);
 }
 #partList {
-  background-color: blue;
+  background-color: rgb(113, 113, 139);
   width: 100%;
   height: 100%;
 }
