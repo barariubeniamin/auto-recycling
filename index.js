@@ -10,7 +10,8 @@ function displayParts(parts) {
           <td>${part.model}</td>
           <td>${part.part}</td>
           
-          <td>x e</td>
+          <td><button type="submit">💾</button>
+                  <button type="edit">🖋️</button></td>
         </tr>
     `;
   });

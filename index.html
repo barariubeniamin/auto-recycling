@@ -10,14 +10,13 @@
   </head>
   <body>
     <header id="header">
-     <div id="banner">
+      <div id="banner">
         <p></p>
         <div class="container">
           <form action="" class="search-bar" id="search">
             <input type="text" placeholder="search" name="q" />
             <button type="submit"><img src="search.png" /></button>
           </form>
-        </div>
         </div>
       </div>
     </header>
@@ -44,7 +43,9 @@
             <a href="#" data-page="About"><i class="fas fa-"></i> About</a>
           </li>
           <li>
-            <a href="#" data-page="Contact Us"><i class="fas fa-"></i> Contact</a>
+            <a href="#" data-page="Contact Us"
+              ><i class="fas fa-"></i> Contact</a
+            >
           </li>
         </ul>
       </div>
@@ -61,12 +62,37 @@
             </thead>
 
             <tbody></tbody>
+            <tfoot>
+              <tr>
+                <td>
+                  <input type="text" required name="Make" placeholder="Make" />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    required
+                    name="Model"
+                    placeholder="Model"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    required
+                    name="name"
+                    placeholder="Enter project name"
+                  />
+                </td>
+                <td>
+                  <button type="submit">💾</button>
+                  <button type="reset">↩️</button>
+                </td>
+              </tr>
+            </tfoot>
           </table>
         </form>
       </div>
-
-     
     </section>
-     <script src="index.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
