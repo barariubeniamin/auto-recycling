@@ -1,0 +1,7 @@
+[
+  { "id": "1", "make": "Tesla", "model": "3", "part": "parbriz" },
+  { "id": "2", "make": "Audi", "model": "A3", "part": "planetara" },
+  { "id": "3", "make": "BMW", "model": "M3", "part": "luneta" },
+  { "id": "4", "make": "Mercedes", "model": "Class C", "part": "motor" },
+  { "id": "5", "make": "Mercedes", "model": "Class A", "part": "aripa" }
+]
