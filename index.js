@@ -16,7 +16,7 @@ const API = {
     METHOD: "DELETE",
   },
 };
-const isDemo = true || location.host === "nmatei.github.io";
+const isDemo = true || location.host === "barariubeniamin.github.io";
 const inlineChanges = isDemo;
 if (isDemo) {
   API.READ.URL = "data/parts.json";
@@ -59,12 +59,13 @@ function loadParts() {
       displayParts(parts);
     });
 }
+
 function getFormValues() {
   const make = $("[name=make]").value;
   const model = $("[name=model]").value;
   const part = $("[name=part]").value;
   const newPart = {
-    id: Math.trunc(Math.random() * 100),
+    id: allParts.length + 1,
     make: make,
     model: model,
     part: part,
@@ -72,6 +73,7 @@ function getFormValues() {
   console.log(newPart);
   return newPart;
 }
+
 function createPartRequest() {
   const method = API.CREATE.METHOD;
   return fetch(API.CREATE.URL, {
@@ -82,6 +84,7 @@ function createPartRequest() {
     body: method === "GET" ? null : JSON.stringify(newPart),
   }).then((r) => r.json());
 }
+
 function submitForm(e) {
   e.preventDefault();
   const newPart = getFormValues();
@@ -93,37 +96,36 @@ function submitForm(e) {
     }
   });
 }
+
+function filterCars() {
+  const makesLinks = [...document.querySelectorAll(".sidebar ul a.selected")];
+  const makes = makesLinks.map((a) => a.getAttribute("data-page"));
+  const search = $("#search [name=q]").value.toLowerCase();
+  console.log(search);
+
+  const parts = allParts.filter((part) => {
+    return (
+      (makes.length ? makes.includes(part.make) : true) &&
+      part.part.toLowerCase().includes(search)
+    );
+  });
+
+  displayParts(parts);
+}
+
 function initEvents() {
   const form = $("#editForm");
   form.addEventListener("submit", submitForm);
 
   $("#search").addEventListener("input", (e) => {
-    const search = e.target.value.toLowerCase();
-    const parts = allParts.filter((part) => {
-      return part.part.toLowerCase().includes(search);
-    });
-    displayParts(parts);
+    filterCars();
   });
   $("#side").addEventListener("click", (e) => {
     if (e.target.matches("a")) {
-      const search = e.target.getAttribute("data-page");
-      const parts = allParts.filter((part) => {
-        return part.make.includes(search);
-      });
-
-      displayParts(parts);
-    }
-    const form = $("#editForm");
-    form.addEventListener("submit", saveNewPart());
-  });
-
-  document.getElementById("side").addEventListener("click", function (e) {
-    if (e.target.matches("a")) {
-      id = e.target.getAttribute("data-page");
-      console.log(id);
+      e.target.classList.toggle("selected");
+      filterCars();
     }
   });
-  document.querySelector;
 }
 
 initEvents();
