@@ -1,3 +1,34 @@
+const API = {
+  CREATE: {
+    URL: "http://localhost:3000/parts/create",
+    METHOD: "POST",
+  },
+  READ: {
+    URL: "http://localhost:3000/parts",
+    METHOD: "GET",
+  },
+  UPDATE: {
+    URL: "http://localhost:3000/parts/update",
+    METHOD: "PUT",
+  },
+  DELETE: {
+    URL: "http://localhost:3000/parts/delete",
+    METHOD: "DELETE",
+  },
+};
+const isDemo = true || location.host === "barariubeniamin.github.io";
+const inlineChanges = isDemo;
+if (isDemo) {
+  API.READ.URL = "data/parts.json";
+  API.DELETE.URL = "data/delete.json";
+  API.CREATE.URL = "data/create.json";
+  API.UPDATE.URL = "data/update.json";
+
+  API.DELETE.METHOD = "GET";
+  API.CREATE.METHOD = "GET";
+  API.UPDATE.METHOD = "GET";
+}
+
 let allParts = [];
 function $(selector) {
   return document.querySelector(selector);
@@ -10,7 +41,8 @@ function displayParts(parts) {
           <td>${part.model}</td>
           <td>${part.part}</td>
           
-          <td>x e</td>
+          <td><button type="submit">💾</button>
+                  <button type="edit">🖋️</button></td>
         </tr>
     `;
   });
@@ -18,7 +50,7 @@ function displayParts(parts) {
 }
 
 function loadParts() {
-  fetch("parts.json")
+  fetch(API.READ.URL)
     .then(function (r) {
       return r.json();
     })
@@ -28,32 +60,72 @@ function loadParts() {
     });
 }
 
+function getFormValues() {
+  const make = $("[name=make]").value;
+  const model = $("[name=model]").value;
+  const part = $("[name=part]").value;
+  const newPart = {
+    id: allParts.length + 1,
+    make: make,
+    model: model,
+    part: part,
+  };
+  console.log(newPart);
+  return newPart;
+}
+
+function createPartRequest() {
+  const method = API.CREATE.METHOD;
+  return fetch(API.CREATE.URL, {
+    method,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: method === "GET" ? null : JSON.stringify(newPart),
+  }).then((r) => r.json());
+}
+
+function submitForm(e) {
+  e.preventDefault();
+  const newPart = getFormValues();
+  createPartRequest(newPart).then((status) => {
+    if (status.success) {
+      allParts = [...allParts, { ...newPart }];
+      displayParts(allParts);
+      $("#editForm").reset();
+    }
+  });
+}
+
+function filterCars() {
+  const makesLinks = [...document.querySelectorAll(".sidebar ul a.selected")];
+  const makes = makesLinks.map((a) => a.getAttribute("data-page"));
+  const search = $("#search [name=q]").value.toLowerCase();
+  console.log(search);
+
+  const parts = allParts.filter((part) => {
+    return (
+      (makes.length ? makes.includes(part.make) : true) &&
+      part.part.toLowerCase().includes(search)
+    );
+  });
+
+  displayParts(parts);
+}
+
 function initEvents() {
+  const form = $("#editForm");
+  form.addEventListener("submit", submitForm);
+
   $("#search").addEventListener("input", (e) => {
-    const search = e.target.value.toLowerCase();
-    const parts = allParts.filter((part) => {
-      return part.part.toLowerCase().includes(search);
-    });
-    displayParts(parts);
+    filterCars();
   });
   $("#side").addEventListener("click", (e) => {
     if (e.target.matches("a")) {
-      const search = e.target.getAttribute("data-page");
-      const parts = allParts.filter((part) => {
-        return part.make.includes(search);
-      });
-
-      displayParts(parts);
+      e.target.classList.toggle("selected");
+      filterCars();
     }
   });
-
-  document.getElementById("side").addEventListener("click", function (e) {
-    if (e.target.matches("a")) {
-      id = e.target.getAttribute("data-page");
-      console.log(id);
-    }
-  });
-  document.querySelector;
 }
 
 initEvents();
