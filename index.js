@@ -158,7 +158,7 @@ function initEvents() {
     }
   });
 }
-// trial and error
+// trial and error//
 const addBtn = document.querySelector(".addBtn");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
