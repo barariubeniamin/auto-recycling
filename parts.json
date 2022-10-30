@@ -3,5 +3,8 @@
   { "make": "Audi", "model": "A3", "part": "planetara" },
   { "make": "BMW", "model": "M3", "part": "luneta" },
   { "make": "Mercedes", "model": "Class C", "part": "motor" },
-  { "make": "Mercedes", "model": "Class A", "part": "aripa" }
+  { "make": "Mercedes", "model": "Class A", "part": "aripa" },
+  { "make": "Mercedes", "model": "Class C", "part": "motor" },
+  { "make": "Mercedes", "model": "Class C", "part": "motor" },
+  { "make": "Mercedes", "model": "Class C", "part": "motor" }
 ]
