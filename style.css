@@ -10,21 +10,16 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(rgb(123, 123, 123), rgb(237, 232, 232));
 }
 #header {
   width: 100%;
-  height: 100%;
-  flex: 1;
+  /* flex: 1; */
+  background-image: url(banner.jpg);
+  background-position: center;
 }
 #header p {
   text-align: left;
-}
-
-#banner {
-  width: 100%;
-  background-image: url(banner.jpg);
-  height: 200px;
-  background-position: center;
 }
 
 * {
@@ -33,19 +28,23 @@ body {
   list-style: none;
   box-sizing: border-box;
   text-decoration: none;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+
 #content {
-  flex: 3;
+  flex: 7;
   display: flex;
   flex-direction: row;
-  margin-left: 0px;
-  margin-top: 10px;
-  margin-right: 10px;
+  /* margin-left: 10px;
+  margin-top: 0.2px;
+  margin-right: 10px; */
 }
 #info {
-  margin: 5px;
-  flex: 4;
+  display: block;
+  /* margin: 5px; */
+  flex: 5;
   height: 100%;
+  margin: 1px;
 }
 .container {
   width: 100%;
@@ -60,8 +59,9 @@ body {
 
 .search-bar {
   width: 100%;
-  max-width: 500px;
-  background: #040404;
+  max-width: 350px;
+  height: 50px;
+  background: #a4a3a3;
   display: flex;
   align-items: center;
   border-radius: 60px;
@@ -76,15 +76,16 @@ body {
   outline: none;
   padding: 24px 20px;
   font-size: 20px;
-  color: white;
+  color: rgb(10, 9, 9);
 }
 
 ::placeholder {
-  color: #cac7ff;
+  color: #070707;
 }
 
 .search-bar button img {
   width: 25px;
+  background: transparent;
 }
 
 .search-bar button {
@@ -92,15 +93,17 @@ body {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  background: #58629b;
+  background: transparent;
   cursor: pointer;
 }
 
 .sidebar {
-  /* position: fixed; */
+  display: block;
+  position: relative;
+  flex: 1;
   left: 0;
-  width: 270px;
-  height: 100%;
+  width: 170px;
+  /* height: 100%; */
   background: #040404;
 }
 .sidebar header {
@@ -125,11 +128,57 @@ body {
   border-bottom: 1px solid rgb(92, 89, 89);
 }
 .sidebar ul a.selected {
-  background-color: aqua;
+  background-color: rgb(106, 80, 126);
 }
 #partList {
   background-color: rgb(113, 113, 139);
   width: 100%;
   height: 100%;
-  border-bottom: 2px solid rgb(0, 0, 0);
-  border-top: 1px solid rgb(0, 0, 0)
+}
+
+/* trial and error */
+
+.addBtn {
+  background-color: rgb(223, 219, 222);
+  width: 100px;
+  height: 50px;
+  border-radius: 20px;
+  text-align: center;
+  float: right;
+  margin: 5px;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+.hidden {
+  display: none;
+}
+#partList tbody {
+  text-align: center;
+}
+#partList thead {
+  text-align: center;
+  font-size: 25px;
+}

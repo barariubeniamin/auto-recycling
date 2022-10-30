@@ -18,6 +18,7 @@ const API = {
 };
 const isDemo = true || location.host === "barariubeniamin.github.io";
 const inlineChanges = isDemo;
+
 if (isDemo) {
   API.READ.URL = "data/parts.json";
   API.DELETE.URL = "data/delete.json";
@@ -28,7 +29,7 @@ if (isDemo) {
   API.CREATE.METHOD = "GET";
   API.UPDATE.METHOD = "GET";
 }
-
+let deleteBtn;
 let allParts = [];
 function $(selector) {
   return document.querySelector(selector);
@@ -40,15 +41,14 @@ function displayParts(parts) {
           <td>${part.make}</td>
           <td>${part.model}</td>
           <td>${part.part}</td>
-          
-          <td><button type="submit">💾</button>
-                  <button type="edit">🖋️</button></td>
+          <td>
+           <a href = '#' data-id='${part.id}' class = 'delete-btn'>❌</a>
+            </td>
         </tr>
     `;
   });
   document.querySelector("table tbody").innerHTML = partsHTML;
 }
-
 function loadParts() {
   fetch(API.READ.URL)
     .then(function (r) {
@@ -65,13 +65,35 @@ function getFormValues() {
   const model = $("[name=model]").value;
   const part = $("[name=part]").value;
   const newPart = {
-    id: allParts.length + 1,
+    id: `${allParts.length + 1}`,
     make: make,
     model: model,
     part: part,
   };
-  console.log(newPart);
   return newPart;
+}
+
+function deletePartRequest(id) {
+  const method = API.DELETE.METHOD;
+  return fetch(API.DELETE.URL, {
+    method,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: method === "GET" ? null : JSON.stringify({}),
+  })
+    .then((r) => r.json())
+    .then((r) => {
+      if (r.success) {
+        if (inlineChanges) {
+          allParts = allParts.filter((part) => part.id !== id);
+
+          displayParts(allParts);
+        } else {
+          loadParts();
+        }
+      }
+    });
 }
 
 function createPartRequest() {
@@ -92,7 +114,8 @@ function submitForm(e) {
     if (status.success) {
       allParts = [...allParts, { ...newPart }];
       displayParts(allParts);
-      $("#editForm").reset();
+      $("#edit").reset();
+      addModal();
     }
   });
 }
@@ -114,7 +137,7 @@ function filterCars() {
 }
 
 function initEvents() {
-  const form = $("#editForm");
+  const form = $("#edit");
   form.addEventListener("submit", submitForm);
 
   $("#search").addEventListener("input", (e) => {
@@ -125,8 +148,33 @@ function initEvents() {
       e.target.classList.toggle("selected");
       filterCars();
     }
+    // trial
+  });
+  document.querySelector("tbody").addEventListener("click", (e) => {
+    if (e.target.matches("a.delete-btn")) {
+      var id = e.target.getAttribute("data-id");
+
+      deletePartRequest(id);
+    }
   });
 }
+// trial and error//
+const addBtn = document.querySelector(".addBtn");
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const closeBtn = document.querySelector(".close-modal");
+const saveBtn = document.querySelector(".save-part");
 
-initEvents();
+function addModal() {
+  modal.classList.toggle("hidden");
+  overlay.classList.toggle("hidden");
+}
+
+addBtn.addEventListener("click", addModal);
+closeBtn.addEventListener("click", addModal);
+document.addEventListener("keydown", function (e) {
+  e.key === "Escape" && !modal.classList.contains("hidden") ? addModal() : null;
+});
+
 loadParts();
+initEvents();

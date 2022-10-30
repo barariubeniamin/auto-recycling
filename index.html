@@ -10,14 +10,13 @@
   </head>
   <body>
     <header id="header">
-      <div id="banner">
-        <p></p>
-        <div class="container">
-          <form action="" class="search-bar" id="search">
-            <input type="text" placeholder="search" name="q" />
-            <button type="submit"><img src="search.png" /></button>
-          </form>
-        </div>
+      <button type="" class="addBtn">Add part</button>
+
+      <div class="container">
+        <form action="" class="search-bar" id="search">
+          <input type="text" placeholder="search" name="q" />
+          <button type="submit"><img src="search.png" /></button>
+        </form>
       </div>
     </header>
     <section id="content">
@@ -39,14 +38,14 @@
           <li>
             <a href="#" data-page="Audi"><i class="fas fa-"></i> Audi</a>
           </li>
-          <li>
+          <!-- <li>
             <a href="#" data-page="About"><i class="fas fa-"></i> About</a>
           </li>
           <li>
             <a href="#" data-page="Contact Us"
               ><i class="fas fa-"></i> Contact</a
             >
-          </li>
+          </li> -->
         </ul>
       </div>
       <div id="info">
@@ -62,43 +61,39 @@
             </thead>
 
             <tbody></tbody>
-            <tfoot>
-              <tr>
-                <td>
-                  <input
-                    id=""
-                    type="text"
-                    required
-                    name="make"
-                    placeholder="Make"
-                  />
-                </td>
-                <td>
-                  <input
-                    id=""
-                    type="text"
-                    required
-                    name="model"
-                    placeholder="Model"
-                  />
-                </td>
-                <td>
-                  <input
-                    id=""
-                    type="text"
-                    required
-                    name="part"
-                    placeholder="Part"
-                  />
-                </td>
-                <td>
-                  <button id="save" type="submit">💾</button>
-                  <button type="reset">↩️</button>
-                </td>
-              </tr>
-            </tfoot>
           </table>
         </form>
+        <div class="modal hidden">
+          <button class="close-modal">&times;</button>
+          <h1>Please Add Part</h1>
+          <div id="addParts">
+            <form action="" method="" id="edit">
+              <input
+                class="input make"
+                type="text"
+                required
+                name="make"
+                placeholder="Make"
+              />
+              <input
+                class="input model"
+                type="text"
+                required
+                name="model"
+                placeholder="Model"
+              />
+              <input
+                class="input part"
+                type="text"
+                required
+                name="part"
+                placeholder="Part"
+              />
+              <button class="save-part" type="submit">💾</button>
+            </form>
+          </div>
+        </div>
+        <div class="overlay hidden"></div>
       </div>
     </section>
     <script src="index.js"></script>
