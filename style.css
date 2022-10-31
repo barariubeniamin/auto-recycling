@@ -128,7 +128,7 @@ body {
   border-bottom: 1px solid rgb(92, 89, 89);
 }
 .sidebar ul a.selected {
-  background: linear-gradient(to left, #020202, #f95959);
+  background: linear-gradient(to left, #020202, #f9b159);
 }
 #partList {
   background: linear-gradient(to bottom, #dfcaca, #bae8e8);
