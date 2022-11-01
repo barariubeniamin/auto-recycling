@@ -2,6 +2,13 @@
   { "id": "1", "make": "Tesla", "model": "3", "part": "parbriz" },
   { "id": "2", "make": "Audi", "model": "A3", "part": "planetara" },
   { "id": "3", "make": "BMW", "model": "M3", "part": "luneta" },
-  { "id": "4", "make": "Mercedes", "model": "Class C", "part": "motor" },
-  { "id": "5", "make": "Mercedes", "model": "Class A", "part": "aripa" }
+  { "id": "4", "make": "Mercedes", "model": "Class C", "part": "engine" },
+  { "id": "5", "make": "Mercedes", "model": "Class A", "part": "aripa" },
+  { "id": "6", "make": "Opel", "model": "Mokka", "part": "capota" },
+  { "id": "7", "make": "Toyota", "model": "Yaris", "part": "plafon" },
+  { "id": "8", "make": "Ford", "model": "Focus", "part": "gearbox" },
+  { "id": "9", "make": "Audi", "model": "A4", "part": "rear bumper" },
+  { "id": "10", "make": "Tesla", "model": "S", "part": "acumulator" },
+  { "id": "11", "make": "BMW", "model": "M135i", "part": "portiera dreapta-fata" },
+  { "id": "12", "make": "Toyota", "model": "Corolla Sedan", "part": "clutch" }
 ]
