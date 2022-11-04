@@ -222,3 +222,9 @@ ul li:nth-child(even):hover {
   transform: perspective(200px) rotateY(10deg);
   padding-left: 5%;
 }
+
+tbody tr:nth-child(even) {background: #CCC}
+tbody tr:nth-child(odd) {background: rgb(221, 220, 216)}
+tr:first-child {
+  background: linear-gradient( #bae8e8, #000000 );
+}
