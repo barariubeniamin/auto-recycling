@@ -220,3 +220,8 @@ tbody tr:nth-child(odd) {
 tr:first-child {
   background: linear-gradient(#bae8e8, #000000);
 }
+
+footer {
+  text-align: center;
+  text-decoration: solid;
+}
