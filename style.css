@@ -189,7 +189,7 @@ ul {
 }
 ul li {
   box-sizing: border-box;
-  width: 15em;
+
   height: 3em;
   font-size: 20px;
   border-radius: 0.5em;
@@ -205,26 +205,24 @@ ul li {
 ul li:nth-child(odd) {
   background: linear-gradient(to right, #000000, #bae8e8);
   text-align: left;
-  padding-left: 10%;
-  transform: perspective(500px) rotateY(45deg);
 }
 ul li:nth-child(even) {
   background: linear-gradient(to left, #020202, #bae8e8);
-  text-align: right;
-  padding-right: 10%;
-  transform: perspective(500px) rotateY(-45deg);
+  text-align: left;
 }
 ul li:nth-child(odd):hover {
   transform: perspective(200px) rotateY(10deg);
-  padding-left: 5%;
 }
 ul li:nth-child(even):hover {
   transform: perspective(200px) rotateY(10deg);
-  padding-left: 5%;
 }
 
-tbody tr:nth-child(even) {background: #CCC}
-tbody tr:nth-child(odd) {background: rgb(221, 220, 216)}
+tbody tr:nth-child(even) {
+  background: #ccc;
+}
+tbody tr:nth-child(odd) {
+  background: rgb(221, 220, 216);
+}
 tr:first-child {
-  background: linear-gradient( #bae8e8, #000000 );
+  background: linear-gradient(#bae8e8, #000000);
 }
